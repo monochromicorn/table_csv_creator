@@ -2,9 +2,7 @@ class ModelFactory < ActiveRecord::Base
   self.abstract_class = true
 
   class << self
-    def build_model(params)
-      schema    = params[:schema]
-      table     = params[:table]
+    def build_model(schema:, table:)
       full_name = "#{schema}.#{table}"
 
       model = Class.new(ModelFactory) do
@@ -17,7 +15,7 @@ class ModelFactory < ActiveRecord::Base
     end
 
     private
-    
+
     def create_database_objects(schema, model, full_name)
       connection = ModelFactory.connection
 

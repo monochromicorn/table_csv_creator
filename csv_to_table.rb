@@ -30,5 +30,5 @@ ActiveRecord::Base.establish_connection(
 #   end
 # end
 
-model = ModelFactory.build_model({schema: 'public', table: 'my_table_2'})
+model = ModelFactory.build_model(schema: 'public', table: 'my_table_22')
 model.new(name: 'Mario', address: '742 Evergreen Terrace').save!
